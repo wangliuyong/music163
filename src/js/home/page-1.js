@@ -34,58 +34,8 @@
     <section class="songs">
       <h2>最新音乐</h2>
       <ol class="list">
-        <li>
-          <h3>爱你不后悔</h3>
-          <p>
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-yinle"></use>
-          </svg>王刘永
-          </p>
-          <a href="#">
-              <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-shuangsechangyongtubiao-"></use>
-              </svg>
-          </a>
-        </li>
-        <li>
-            <h3>爱你不后悔</h3>
-            <p>
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-yinle"></use>
-            </svg>王刘永
-            </p>
-            <a href="#">
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-shuangsechangyongtubiao-"></use>
-                </svg>
-            </a>
-          </li>
-          <li>
-              <h3>爱你不后悔</h3>
-              <p>
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-yinle"></use>
-              </svg>王刘永
-              </p>
-              <a href="#">
-                  <svg class="icon" aria-hidden="true">
-                      <use xlink:href="#icon-shuangsechangyongtubiao-"></use>
-                  </svg>
-              </a>
-            </li>
-            <li>
-                <h3>爱你不后悔</h3>
-                <p>
-                  <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-yinle"></use>
-                </svg>王刘永
-                </p>
-                <a href="#">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-shuangsechangyongtubiao-"></use>
-                    </svg>
-                </a>
-              </li>
+        
+        
       </ol>
     </section>
     <section class="art">
