@@ -1,0 +1,171 @@
+*{margin: 0;padding: 0;box-sizing: border-box;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 14px;}
+ul,ol{list-style: none;}
+a{text-decoration: none;}
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+*{transition: all 1s;}
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+  font-size: 19px;
+}
+
+/*sticky*/
+.sticky{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #5F5F5F;
+  background: #fff;
+}
+
+/*topBar*/
+.topBar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1px;
+  padding: 7px 10px;
+  background: #292929;
+}
+
+.topBar img{margin-left: -16px;}
+.topBar a{
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 10px;
+  font-size: 15px;
+  border:1px solid #4e4e4e;
+  border-radius: 20px;
+  color: #fff;
+}
+/*tabs*/
+
+ol.tabs-nav {
+  display: flex;
+  color: #000;
+}
+ol.tabs-nav >li{
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  
+}
+ol.tabs-nav >li>.text{
+  font-size: 16px;
+  text-align: center;
+  padding: 7px 5px;
+  color: #000;
+  border-bottom: 2px solid transparent;
+}
+ol.tabs-nav >li.active>.text{
+  border-bottom: 2px solid #74B0C6;
+}
+/*tabs-content*/
+ol.tabs-content{
+  border: 0.1px solid transparent;
+  margin-top: 105px;
+}
+
+ol.tabs-content h2{
+  border-left: 2px solid #74B0C6;
+  padding-left: 8px;
+  margin: 20px 0 8px;
+  height: 20px;
+  line-height: 22px;
+  font-size: 17px;
+}
+
+
+.page-1 >.playList> .songs{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+}
+
+.playList>.songs>li{
+  width: 32.5%;
+  margin: 8px 0;
+  
+}
+.playList>.songs>li img{
+  width: 100%;
+  box-shadow: 0px 0px 5px 1px rgba(189,188,188,1);
+}
+.songs>li p{padding: 6px 2px 0 6px;line-height: 18px;height: 36px;}
+
+
+/**/
+.page-1{display: none;}
+.page-2{display: none;}
+.page-3{display: none;}
+
+.page-1.active{display: block;}
+.page-2.active{display: block;}
+.page-3.active{display: block;}
+
+
+.page-1>.songs{
+  font-size: 17px;
+}
+.page-1>.songs>.list{margin-top: 17px;}
+.page-1>.songs>.list>li{
+  position: relative;
+  margin-left: 10px;
+  padding-bottom: 6px;
+  padding-top: 5px;
+  border-bottom: 1px solid #E2E2E3;
+}
+.page-1>.songs>.list h3{font-size: 15px;font-weight: normal;}
+.page-1>.songs>.list a{
+  position: absolute;
+  top: 17px;
+  right: 14px;
+}
+.page-1>.songs>.list a .icon{font-size: 24px;}
+.page-1>.songs>.list p{
+  height: 20px;
+  line-height: 23px;
+  font-size: 15px;
+  color: #888;
+  padding: 2px 0;
+}
+/*art*/
+.art{
+  padding-top: 38px;
+  padding-bottom: 28px;
+  background: transparent url(//i.loli.net/2017/08/25/599f862b9c98d.png) no-repeat center;
+  background-size: cover;
+  text-align: center;
+  background: #292929;
+  color: #fff;
+}
+.art .logo{
+  height: 44px;
+}
+
+.art .open-app{
+  height: 57px;
+  line-height: 57px;
+  
+}
+.art a{
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  color: #74B0C6;
+  margin: 10px 0 5px;
+}
+.art .copyright{
+  font-size: 10px;
+  color: #888;
+}
