@@ -1,5 +1,5 @@
 *{margin: 0;padding: 0;box-sizing: border-box;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 14px;}
-ul,ol{list-style: none;}
+ul,ol{list-style: none;padding: 0 2px}
 a{text-decoration: none;}
 .clearfix::after{
   content: '';
@@ -98,10 +98,11 @@ ol.tabs-content h2{
   
 }
 .playList>.songs>li img{
+  border-radius: 5px;
   width: 100%;
   box-shadow: 0px 0px 5px 1px rgba(189,188,188,1);
 }
-.songs>li p{padding: 6px 2px 0 6px;line-height: 18px;height: 36px;}
+.songs>li p{padding: 6px 2px 0 6px;line-height: 18px;height: 36px;font-size: 12px;}
 
 
 /**/
@@ -137,10 +138,11 @@ ol.tabs-content h2{
   align-items: center;
   height: 20px;
   line-height: 20px;
-  font-size: 14px;
+  font-size: 12px;
   color: #888;
   padding: 2px 0;
 }
+.page-1>.songs .cover{border-radius: 4px;}
 /*art*/
 .art{
   padding-top: 38px;

@@ -21,8 +21,7 @@
       data.map((song)=>{
         let html=this.template
         console.log(song.song)
-        html=html.replace('_song_',song.song)
-        html=html.replace('_singer_',song.singer)
+        html=html.replace('_song_',song.song).replace('_singer_',song.singer)
         $ol.append(html)
       })
 
