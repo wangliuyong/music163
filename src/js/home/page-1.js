@@ -111,6 +111,18 @@
       this.view.render()
       this.bindEvent()
       this.bindEventHubOn()
+      this.loadMoudle1()
+      this.loadMoudle2()
+    },
+    loadMoudle1() {
+      let script1 = document.createElement('script')
+      script1.src = './js/home/page-1-1.js'
+      $(document.body).append(script1)
+    },
+    loadMoudle2() {
+      let script2 = document.createElement('script')
+      script2.src = './js/home/page-1-2.js'
+      $(document.body).append(script2)
     },
     bindEvent(){},
     bindEventHubOn(){
