@@ -9,7 +9,7 @@
           <use xlink:href="#icon-yinle"></use>
       </svg>_singer_
       </p>
-      <a href="#">
+      <a href="./song.html?id=_id_">
           <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-shuangsechangyongtubiao-"></use>
           </svg>
@@ -21,7 +21,7 @@
       data.map((song)=>{
         let html=this.template
         console.log(song.song)
-        html=html.replace('_song_',song.song).replace('_singer_',song.singer)
+        html=html.replace('_song_',song.song).replace('_singer_',song.singer).replace('_id_',song.id)
         $ol.append(html)
       })
 
