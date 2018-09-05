@@ -31,6 +31,8 @@
     let model={
         data:{song:'',singer:'',url:'',id:'',cover:''},//永远只存储一首歌的数据
         create(data) {
+
+            console.log('create')
             // 声明类型
             var Song = AV.Object.extend('Song');
             // 新建对象
@@ -75,9 +77,7 @@
             this.view.init();
             this.view.render(this.model.data);
             this.bindEventHubOn()
-            this.bindEvent();
-            
-            
+            this.bindEvent() 
         },
         reset(data){
             this.view.render(data);
@@ -95,13 +95,13 @@
         },
         bindEvent(){
             this.view.$el.on('submit','form',(e)=>{
+            
                 e.preventDefault();
                 let needs=['song','singer','url','cover'];
                 let data={}
                 needs.map((string)=>{
                     data[string]=this.view.$el.find(`input[name="${string}"]`).val();
                 });
-                
                 if (this.model.data.id) {
                     this.model.update(data).then((song)=>{
                         let {id,attributes}=song;
@@ -110,6 +110,8 @@
                         //console.log(this.model.data)
                         let data=JSON.parse(JSON.stringify(this.model.data));
                         window.eventHub.emit('update',data)
+                        $(this.view.el).removeClass('active');
+                        window.eventHub.emit('submit', this.model.data);
                     })
                 }else{
                     this.model.create(data).then(()=>{

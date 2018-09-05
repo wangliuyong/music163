@@ -6,7 +6,7 @@
     `,
     render(data){
       $(this.el).find('audio').attr('src',data.url).get(0).onended=()=>{
-        console.log('1111111')
+        this.pause()
       }
       this.play()
 
