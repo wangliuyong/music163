@@ -63,7 +63,7 @@
             song.set('song',data.song)
             song.set('singer',data.singer)
             song.set('url',data.url)
-            song.set('url',data.cover)
+            song.set('cover',data.cover)
             // 保存到云端
             return song.save()
         },
@@ -101,10 +101,13 @@
                 needs.map((string)=>{
                     data[string]=this.view.$el.find(`input[name="${string}"]`).val();
                 });
+                
                 if (this.model.data.id) {
                     this.model.update(data).then((song)=>{
                         let {id,attributes}=song;
                         this.model.data={id,...attributes}
+
+                        //console.log(this.model.data)
                         let data=JSON.parse(JSON.stringify(this.model.data));
                         window.eventHub.emit('update',data)
                     })

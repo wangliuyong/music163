@@ -6,15 +6,26 @@
     `,
     render(data){
       $(this.el).find('audio')[0].src=`${data.url}`
+      this.play()
       console.log(data)
+      $(this.el).find('.background').css('background',`url(${data.cover}) no-repeat center cover`)
+      $(this.el).find('img.cover')[0].src=`${data.cover}`
+     
+      $(this.el).find('span.song').text(data.song)
+      $(this.el).find('span.singer').text(data.singer)
     },
     play(){
       let audio=$(this.el).find('audio')[0]
       audio.play()
+      $(this.el).find('#play').removeClass('active')
+      $(this.el).find('.disc-wrap').removeClass('pause').addClass('play')
+                
     },
     pause(){
       let audio=$(this.el).find('audio')[0]
       audio.pause()
+      $(this.el).find('#play').addClass('active')
+      $(this.el).find('.disc-wrap').removeClass('play').addClass('pause')
     },
   }
   let controller={
@@ -30,8 +41,15 @@
       this.bindEvents()
     },
     bindEvents(){
-      $(this.view.el).on('click','.play',()=>{
-        this.view.play()
+      $(this.view.el).on('click','.click',()=>{
+        let status=this.model.data.status
+        if(status==='pause'){
+          this.view.play()
+          this.model.data.status='play'
+        }else{
+          this.view.pause()
+          this.model.data.status='pause'
+        }
       })
     },
     getSongId() {
