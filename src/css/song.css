@@ -31,11 +31,9 @@ p{vertical-align: middle;}
   position: relative;
 }
 .click{
-  padding-bottom: 23vh;
+  padding-bottom: 20vh;
 }
 .background{
-  content: '';
-  display: block;
   position: absolute;
   height: 100%;
   width: 100%;;
@@ -92,6 +90,7 @@ p{vertical-align: middle;}
  .disc-wrap.pause{animation-play-state: paused;}
  .disc-wrap .cover{
   width: 44.5vw;
+  height: 44.5vw;
   border-radius: 50%;
  }
 
@@ -104,6 +103,20 @@ p{vertical-align: middle;}
    text-align: center;
    color: #fff;
  }
+ .song-description span.song{
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.1;
+  color: #fefefe;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+ .song-description span.singer{    
+  font-size: 13px;
+  color: hsla(0,0%,100%,.6);
+}
+
  .song-description h3{
    font-size: 18px;
    line-height: 36px;
@@ -125,7 +138,7 @@ p{vertical-align: middle;}
 
 .link a{
   width: 38.5vw;
-  margin: 1em;
+  margin-top: 1em;
   text-align: center;
   border: 1px solid #6391D2;
   background: transparent;
@@ -134,6 +147,7 @@ p{vertical-align: middle;}
   text-decoration: none;
   border-radius: 5vw;
   letter-spacing: 1vw;
+  margin: 1em;
 }
 
 .link a.download{background: #78B6BD;}
