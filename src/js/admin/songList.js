@@ -100,5 +100,5 @@
         },
     };
     controller.init(view,model);
-    window.app.songList=controller;
+    //window.app.songList=controller;
 }

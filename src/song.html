@@ -9,25 +9,38 @@
   <title>聆听音乐 聆听你我</title>
 </head>
 <body>
-  <div class="page">
-   <div id="app"></div>
-    <img src="./img/pointer.png" class="pointer" alt="">
-    <div class="disc-wrap">
-      <div class="icon-werap"></div>
-        <img src="./img/disc.png" class="disc" alt="">
-        <img src="./img/disc-light.png" class="disc disc-light" alt="">
-        <img src="./img/song-3.jpg" class="cover" alt="">
-    </div>
+  <div class="page" id="app">
+   <audio src="#"></audio>
+   <div class="background"></div>
+    <div class="click">
+      <img src="./img/pointer.png" class="pointer" alt="">
+      <div class="playWrap">
+        <div class="disc-wrap">
+          <img src="./img/song-3.jpg" class="cover" alt="">
+          <img src="./img/disc.png" class="disc" alt="">
+          <img src="./img/disc-light.png" class="disc disc-light" alt="">
+          <div class="icon-werap">
+            <svg class="icon" aria-hidden="true" id="play">
+              <use xlink:href="#icon-videoplay"></use>
+            </svg>
+          </div>
+        </div>
+    
+      </div>
       <div class="song-description">
         <h3 class="song">夏天的风</h3>
-        <div class="lyric"></div>
+        <div class="lyric">
+          <p class="class">啦啦啦啦啦绿</p>
+        </div>
       </div>
+    </div>
       <div class="link">
         <a href="#" 　class="open">打开</a>
         <a href="#" class="download">下载</a>
       </div>
     </div>
   </div>
+  <script src="//at.alicdn.com/t/font_821111_wdvb8ti0dmk.js"></script>
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
   <script src="./initallizer/av.js"></script>

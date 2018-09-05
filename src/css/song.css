@@ -7,7 +7,19 @@ a{text-decoration: none;}
   clear: both;
 }
 p{vertical-align: middle;}
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+  font-size: 14vw;
+  color: #fff;
+}
 
+@keyframes circle{
+  0%{transform: rotate(0deg)}
+  100%{transform: rotate(360deg)}
+}
 
 
 .page{
@@ -15,20 +27,117 @@ p{vertical-align: middle;}
   flex-direction: column;
   height: 100vh;
   width: 100vw;
+  
+  position: relative;
+}
+.click{
+  padding-bottom: 23vh;
+}
+.background{
+  content: '';
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;;
   background: transparent url(../img/song-3.jpg) no-repeat center;
   background-size: cover;
-  position: relative;
+  filter: blur(5px);
+  z-index: -1;
 }
 
 .page .pointer{
   position: absolute;
   left: 45vw;
   width: 24vw;
+  z-index: 1;
 }
 
-.page .disc-wrap img{
+.playWrap{
+  position: relative;
+  margin-top: 18vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.disc-wrap{
+  position: relative;
+  width: 72vw;
+  height: 72vw;
+}
+.disc-wrap .icon-werap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-werap .icon{
   position: absolute;
+  z-index: 2;
 }
-.page .disc-wrap .disc{
-  width: 75vw;
+.page  img{
+  position: absolute;
+ }
+ .page  .disc{
+   width: 72vw;
+ }
+ .disc-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: circle 10s linear infinite;
+  animation-play-state: paused;
+ }
+
+ .disc-wrap.play{animation-play-state: running;}
+ .disc-wrap.pause{animation-play-state: paused;}
+ .disc-wrap .cover{
+  width: 44.5vw;
+  border-radius: 50%;
+ }
+
+ #play{display: none;}
+ #play.active{display: block;}
+
+ .song-description{margin-top: 20px;}
+
+ .song-description h3,.song-description .lyric{
+   text-align: center;
+   color: #fff;
+ }
+ .song-description h3{
+   font-size: 18px;
+   line-height: 36px;
+  }
+  .song-description .lyric{    
+  height: 72px;
+  overflow: hidden;
 }
+.lyric p{
+  font-size: 14px;
+  line-height: 24px;
+}
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.link a{
+  width: 38.5vw;
+  margin: 1em;
+  text-align: center;
+  border: 1px solid #6391D2;
+  background: transparent;
+  padding: 2vw;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 5vw;
+  letter-spacing: 1vw;
+}
+
+.link a.download{background: #78B6BD;}
+
+ 
+ 
+ 

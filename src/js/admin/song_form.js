@@ -10,11 +10,12 @@
             <div class="row"><label>歌名: <input name="song" type="text" value="_song_"></label></div>
             <div class="row"><label>歌手: <input name="singer" type="text" value="_singer_"></label></div>
             <div class="row"><label>外链: <input name="url" type="text" value="_url_"></label></div>
+            <div class="row"><label>封面: <input name="cover" type="text" value="_cover_"></label></div>
             <div class="row"><input type="submit" value="保存"></div>
         </form>
         `,
         render(data={}){
-            let placeholder=['song','url','singer'];
+            let placeholder=['song','url','singer','cover'];
             let html=this.template;
             placeholder.map((string)=>{
                 html=html.replace(`_${string}_`,data[string] || '')
@@ -28,7 +29,7 @@
         },
     }
     let model={
-        data:{song:'',singer:'',url:'',id:''},//永远只存储一首歌的数据
+        data:{song:'',singer:'',url:'',id:'',cover:''},//永远只存储一首歌的数据
         create(data) {
             // 声明类型
             var Song = AV.Object.extend('Song');
@@ -38,6 +39,7 @@
             song.set('song', data.song);
             song.set('singer', data.singer);
             song.set('url', data.url);
+            song.set('cover', data.cover);
             // 设置优先级
             //song.set('priority', 1);
             return song.save().then((Song) =>{ //更新model data
@@ -47,7 +49,8 @@
                     id:id,
                     song:attributes.song,
                     url:attributes.url,
-                    singer:attributes.singer
+                    singer:attributes.singer,
+                    cover:attributes.cover
                 }) 
             }, function (error) {
                 console.error(error);
@@ -60,6 +63,7 @@
             song.set('song',data.song)
             song.set('singer',data.singer)
             song.set('url',data.url)
+            song.set('url',data.cover)
             // 保存到云端
             return song.save()
         },
@@ -92,7 +96,7 @@
         bindEvent(){
             this.view.$el.on('submit','form',(e)=>{
                 e.preventDefault();
-                let needs=['song','singer','url'];
+                let needs=['song','singer','url','cover'];
                 let data={}
                 needs.map((string)=>{
                     data[string]=this.view.$el.find(`input[name="${string}"]`).val();

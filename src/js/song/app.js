@@ -3,14 +3,10 @@
     el:'#app',
     template:`
       <audio src="_url_" autoplay></audio>
-      <div>
-        <button class="play">播放</button>
-        <button class="pause">暂停</button>
-      </div>
     `,
     render(data){
-      
-      $(this.el).html(this.template.replace(`_url_`,data.url))
+      $(this.el).find('audio')[0].src=`${data.url}`
+      console.log(data)
     },
     play(){
       let audio=$(this.el).find('audio')[0]
@@ -28,7 +24,7 @@
       let id=this.getSongId()
       this.model.setId(id)
       this.model.getSong().then((song)=>{
-        this.view.render(this.model.data)
+        this.view.render(this.model.data.song)
         //this.view.play()
       })
       this.bindEvents()
@@ -36,9 +32,6 @@
     bindEvents(){
       $(this.view.el).on('click','.play',()=>{
         this.view.play()
-      })
-      $(this.view.el).on('click','.pause',()=>{
-        this.view.pause()
       })
     },
     getSongId() {
@@ -60,20 +53,23 @@
   }
   let model={
     data:{
-      id:'',
-      song:'',
-      singer:'',
-      url:''
+      song:{
+        id:'',
+        cover:'',
+        singer:'',
+        url:''
+      },
+      status:'pause',
+      
     },
     setId(id){
-      this.data.id=id
-      
+      this.data.song.id=id
     },
     getSong() {
       var query = new AV.Query('Song');
-      return query.get(this.data.id).then((song)=>{
+      return query.get(this.data.song.id).then((song)=>{
         // 成功获得实例
-        Object.assign(this.data,song.attributes)
+        Object.assign(this.data.song,song.attributes)
         return song
       }, function (error) {
         // 异常处理
