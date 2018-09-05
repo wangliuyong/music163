@@ -5,10 +5,14 @@
       <audio src="_url_" autoplay></audio>
     `,
     render(data){
-      $(this.el).find('audio')[0].src=`${data.url}`
+      $(this.el).find('audio').attr('src',data.url).get(0).onended=()=>{
+        console.log('1111111')
+      }
       this.play()
-      console.log(data)
-      $(this.el).find('.background').css('background',`url(${data.cover}) no-repeat center cover`)
+
+      //console.log($(this.el).find('.background').css())
+      //$(this.el).find('.background').css('background',`url(${data.cover}) no-repeat center cover`)
+      $(this.el).find('.background').css('background',`url(${data.cover}) no-repeat center center/cover`)
       $(this.el).find('img.cover')[0].src=`${data.cover}`
      
       $(this.el).find('span.song').text(data.song)

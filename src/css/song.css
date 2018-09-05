@@ -36,8 +36,8 @@ p{vertical-align: middle;}
 .background{
   position: absolute;
   height: 100%;
-  width: 100%;;
-  background: transparent url(../img/song-3.jpg) no-repeat center;
+  width: 100%;
+  background: transparent url('#') no-repeat center;
   background-size: cover;
   filter: blur(5px);
   z-index: -1;
@@ -68,10 +68,7 @@ p{vertical-align: middle;}
   justify-content: center;
   align-items: center;
 }
-.icon-werap .icon{
-  position: absolute;
-  z-index: 2;
-}
+
 .page  img{
   position: absolute;
  }
