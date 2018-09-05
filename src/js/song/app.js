@@ -1,7 +1,14 @@
 {
-  
-
-  let view={}
+  let view={
+    el:'#app',
+    template:`
+      <audio src="_url_" autoplay controls></audio>
+    `,
+    render(data){
+      
+      $(this.el).html(this.template.replace(`_url_`,data.url))
+    },
+  }
   let controller={
     init(view,model){
       this.view=view
@@ -9,7 +16,7 @@
       let id=this.getSongId()
       this.model.setId(id)
       this.model.getSong().then((song)=>{
-
+        this.view.render(this.model.data)
       })
     },
     getSongId() {
