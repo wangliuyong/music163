@@ -2,11 +2,23 @@
   let view={
     el:'#app',
     template:`
-      <audio src="_url_" autoplay controls></audio>
+      <audio src="_url_" controls></audio>
+      <div>
+        <button class="play">播放</button>
+        <button class="pause">暂停</button>
+      </div>
     `,
     render(data){
       
       $(this.el).html(this.template.replace(`_url_`,data.url))
+    },
+    play(){
+      let audio=$(this.el).find('audio')[0]
+      audio.play()
+    },
+    pause(){
+      let audio=$(this.el).find('audio')[0]
+      audio.pause()
     },
   }
   let controller={
@@ -17,6 +29,16 @@
       this.model.setId(id)
       this.model.getSong().then((song)=>{
         this.view.render(this.model.data)
+        //this.view.play()
+      })
+      this.bindEvents()
+    },
+    bindEvents(){
+      $(this.view.el).on('click','.play',()=>{
+        this.view.play()
+      })
+      $(this.view.el).on('click','.pause',()=>{
+        this.view.pause()
       })
     },
     getSongId() {
