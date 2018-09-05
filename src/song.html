@@ -4,11 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>播放歌曲</title>
+  <link rel="shortcut icon" href="./img/title.png" type="image/x-icon">
+  <link rel="stylesheet" href="./css/song.css">
+  <title>聆听音乐 聆听你我</title>
 </head>
 <body>
-  <div id="app"></div>
-  
+  <div class="page">
+   <div id="app"></div>
+    <img src="./img/pointer.png" class="pointer" alt="">
+    <div class="disc-wrap">
+      <div class="icon-werap"></div>
+        <img src="./img/disc.png" class="disc" alt="">
+        <img src="./img/disc-light.png" class="disc disc-light" alt="">
+        <img src="./img/song-3.jpg" class="cover" alt="">
+    </div>
+      <div class="song-description">
+        <h3 class="song">夏天的风</h3>
+        <div class="lyric"></div>
+      </div>
+      <div class="link">
+        <a href="#" 　class="open">打开</a>
+        <a href="#" class="download">下载</a>
+      </div>
+    </div>
+  </div>
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
   <script src="./initallizer/av.js"></script>

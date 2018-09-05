@@ -2,7 +2,7 @@
   let view={
     el:'#app',
     template:`
-      <audio src="_url_" controls></audio>
+      <audio src="_url_" autoplay></audio>
       <div>
         <button class="play">播放</button>
         <button class="pause">暂停</button>
