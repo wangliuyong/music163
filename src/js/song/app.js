@@ -17,12 +17,28 @@
      
       $(this.el).find('span.song').text(data.song)
       $(this.el).find('span.singer').text(data.singer)
+      let arr=data.lyrics.split('\n')
+
+      arr.map((string)=>{
+        let p=$('<p></p>')
+        let times=string.substr(1,8).split(':')
+        let minutes=times[0]-0
+        let seconds=times[1]-0
+        let time=minutes*60+seconds
+        p.attr('data-time',time)
+        $(this.el).find('.lyricWrap').append(p.text(string.substr(10)))
+      })
     },
     play(){
       let audio=$(this.el).find('audio')[0]
       audio.play()
       $(this.el).find('#play').removeClass('active')
       $(this.el).find('.disc-wrap').removeClass('pause').addClass('play')
+
+      audio.ontimeupdate=()=>{
+        //console.log(audio.currentTime)
+        this.showLyrics(audio.currentTime)
+      }
                 
     },
     pause(){
@@ -30,6 +46,37 @@
       audio.pause()
       $(this.el).find('#play').addClass('active')
       $(this.el).find('.disc-wrap').removeClass('play').addClass('pause')
+    },
+    showLyrics(time){
+      //console.log(time)
+      let $p=$(this.el).find('p')
+      //console.log($p.eq(2).offset())
+      for(let i=0;i<$p.length;i++){
+        if(i===$p.length-1){
+          //console.log($p[i])
+        } else {
+          let currentTime = $p.eq(i).attr('data-time')
+          let nextTime = $p.eq(i + 1).attr('data-time')
+          if (currentTime < time && time < nextTime) {
+
+            //console.log($p[i])
+
+            let a=$p[i].getBoundingClientRect().top
+           
+            let b=$(this.el).find('.lyricWrap')[0].getBoundingClientRect().top
+            
+            let height=a-b
+            console.log(height)
+            $(this.el).find('.lyricWrap').css({
+              transform:`translateY(${-height+25}px)`,
+            })
+            $p.eq(i).addClass('active').siblings('.active').removeClass('active')
+            break
+          }
+        }
+        
+        
+      }
     },
   }
   let controller={
@@ -41,6 +88,7 @@
       this.model.getSong().then((song)=>{
         this.view.render(this.model.data.song)
         //this.view.play()
+
       })
       this.bindEvents()
     },
@@ -61,7 +109,7 @@
       if (id.indexOf('?') === 0) {
         id = id.substring(1)
       }
-      let arr = id.split('&').filter((item) => { return item })
+      let arr = id.split('&').filter((item) => { return item })//利用filter过滤地掉空字符串
       for (let i = 0; i < arr.length; i++) {
         let key = arr[i].split('=')[0]
         let value = arr[i].split('=')[1]
@@ -79,7 +127,8 @@
         id:'',
         cover:'',
         singer:'',
-        url:''
+        url:'',
+        lyrics:''
       },
       status:'pause',
       

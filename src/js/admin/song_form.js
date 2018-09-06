@@ -10,26 +10,30 @@
             <div class="row"><label>歌名: <input name="song" type="text" value="_song_"></label></div>
             <div class="row"><label>歌手: <input name="singer" type="text" value="_singer_"></label></div>
             <div class="row"><label>外链: <input name="url" type="text" value="_url_"></label></div>
+            
             <div class="row"><label>封面: <input name="cover" type="text" value="_cover_"></label></div>
+            <div class="row"><label>歌词: <textarea rows="3" cols="21" name="lyrics" type="text" ></textarea></label></div>
             <div class="row"><input type="submit" value="保存"></div>
         </form>
         `,
         render(data={}){
-            let placeholder=['song','url','singer','cover'];
+            let placeholder=['song','url','singer','cover',"lyrics"];
             let html=this.template;
             placeholder.map((string)=>{
                 html=html.replace(`_${string}_`,data[string] || '')
             });
-            $(this.el).html(html);   
+            $(this.el).html(html);
+            $(this.el).find('textarea').text(data.lyrics)  
         },
         addActive(data) {
+            
             model.data = data;
             this.render(model.data);
             $(this.el).addClass('active');
         },
     }
     let model={
-        data:{song:'',singer:'',url:'',id:'',cover:''},//永远只存储一首歌的数据
+        data:{song:'',singer:'',url:'',id:'',cover:'',lyrics:''},//永远只存储一首歌的数据
         create(data) {
 
             console.log('create')
@@ -42,6 +46,7 @@
             song.set('singer', data.singer);
             song.set('url', data.url);
             song.set('cover', data.cover);
+            song.set('lyrics', data.lyrics);
             // 设置优先级
             //song.set('priority', 1);
             return song.save().then((Song) =>{ //更新model data
@@ -52,7 +57,8 @@
                     song:attributes.song,
                     url:attributes.url,
                     singer:attributes.singer,
-                    cover:attributes.cover
+                    cover:attributes.cover,
+                    lyrics:attributes.lyrics
                 }) 
             }, function (error) {
                 console.error(error);
@@ -66,6 +72,7 @@
             song.set('singer',data.singer)
             song.set('url',data.url)
             song.set('cover',data.cover)
+            song.set('lyrics',data.lyrics)
             // 保存到云端
             return song.save()
         },
@@ -78,6 +85,8 @@
             this.view.render(this.model.data);
             this.bindEventHubOn()
             this.bindEvent() 
+
+            
         },
         reset(data){
             this.view.render(data);
@@ -97,10 +106,10 @@
             this.view.$el.on('submit','form',(e)=>{
             
                 e.preventDefault();
-                let needs=['song','singer','url','cover'];
+                let needs=['song','singer','url','cover','lyrics'];
                 let data={}
                 needs.map((string)=>{
-                    data[string]=this.view.$el.find(`input[name="${string}"]`).val();
+                    data[string]=this.view.$el.find(`[name="${string}"]`).val();
                 });
                 if (this.model.data.id) {
                     this.model.update(data).then((song)=>{

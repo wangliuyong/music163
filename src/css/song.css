@@ -29,6 +29,7 @@ p{vertical-align: middle;}
   width: 100vw;
   
   position: relative;
+ 
 }
 .click{
   padding-bottom: 20vh;
@@ -119,12 +120,19 @@ p{vertical-align: middle;}
    line-height: 36px;
   }
   .song-description .lyric{    
-  height: 72px;
+  height: 76px;
   overflow: hidden;
 }
 .lyric p{
-  font-size: 14px;
-  line-height: 24px;
+  height: 25px;
+  font-size: 13px;
+  line-height: 25px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.lyric p.active{
+  color: #6391D2;
+  font-size: 16px;
+  transition: all 1s;
 }
 .link {
   display: flex;

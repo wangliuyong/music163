@@ -93,6 +93,8 @@
                     }
                 }
                 let copyData=JSON.parse(JSON.stringify(data));
+
+    
                 window.eventHub.emit('select',copyData)
         
                 this.view.removeActive(e.currentTarget);
