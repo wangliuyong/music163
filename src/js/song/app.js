@@ -61,12 +61,12 @@
 
             //console.log($p[i])
 
-            let a=$p[i].getBoundingClientRect().top
+            let pHeight=$p[i].getBoundingClientRect().top
            
-            let b=$(this.el).find('.lyricWrap')[0].getBoundingClientRect().top
+            let lyHeight=$(this.el).find('.lyricWrap')[0].getBoundingClientRect().top
             
-            let height=a-b
-            console.log(height)
+            height=pHeight-lyHeight
+          
             $(this.el).find('.lyricWrap').css({
               transform:`translateY(${-height+25}px)`,
             })

@@ -123,6 +123,7 @@ p{vertical-align: middle;}
   height: 76px;
   overflow: hidden;
 }
+.lyricWrap{transition: transform .5s;}
 .lyric p{
   height: 25px;
   font-size: 13px;
