@@ -6,27 +6,27 @@
       <h2>推荐歌单</h2>
       <ol class="songs">
         <li>
-          <div class="cover"><img src="./img/songList-1.webp" alt=""></div>
+          <div class="cover"><a href="./playList-main.html?id=4678swq789q7we8qe7"><img src="./img/songList-1.webp" alt=""></a></div>
           <p>失落少年孤独者俱乐部</p>
         </li>
         <li>
-          <div class="cover"><img src="./img/songList-2.webp" alt=""></div>
+        <div class="cover"><a href="./playList-main.html?id=_id_"><img src="./img/songList-2.webp" alt=""></a></div>
           <p>另类R&B，带给你不一样的性感</p>
         </li>
         <li>
-          <div class="cover"><img src="./img/songList-3.webp" alt=""></div>
+        <div class="cover"><a href="./playList-main.html?id=_id_"><img src="./img/songList-3.webp" alt=""></a></div>
           <p>午睡民谣</p>
         </li>
         <li>
-          <div class="cover"><img src="./img/songList-4.webp" alt=""></div>
+        <div class="cover"><a href="./playList-main.html?id=_id_"><img src="./img/songList-4.webp" alt=""></a></div>
           <p>毛阿姨唱过的歌</p>
         </li>
         <li>
-          <div class="cover"><img src="./img/songList-5.webp" alt=""></div>
+        <div class="cover"><a href="./playList-main.html?id=_id_"><img src="./img/songList-5.webp" alt=""></a></div>
           <p>『港乐』香港音乐大师第三辑：黄霑作品集</p>
         </li>
         <li>
-          <div class="cover"><img src="./img/songList-6.webp" alt=""></div>
+        <div class="cover"><a href="./playList-main.html?id=_id_"><img src="./img/songList-6.webp" alt=""></a></div>
           <p>『旧影』台湾琼瑶剧&电影歌曲全记录</p>
         </li>
       </ol>
