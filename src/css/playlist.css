@@ -92,5 +92,28 @@ section.play_list> h3{
   padding: 2px 0;
   color: #666;
 }
-.page-1>.songs .cover{border-radius: 4px;}
-/*art*/
+.collectionWrap{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+a.collection{
+  width: 80vw;
+  text-align: center;
+  color: inherit;
+  letter-spacing: 1vw;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(99, 145, 210);
+  border-image: initial;
+  background: transparent;
+  padding: 2vw;
+  text-decoration: none;
+  border-radius: 5vw;
+  margin: 1em;
+  color: #fff;
+  background:  rgb(99, 145, 210);
+}
