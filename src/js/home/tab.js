@@ -24,7 +24,7 @@
         $(e.currentTarget).addClass('active').siblings('.active').removeClass('active')
         let $page=$(e.currentTarget).attr('data-page')
         window.eventHub.emit('active',$page)
-        console.log($page)
+        
       })
     },
   }

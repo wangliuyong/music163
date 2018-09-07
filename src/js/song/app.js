@@ -50,14 +50,17 @@
     showLyrics(time){
       //console.log(time)
       let $p=$(this.el).find('p')
+      let currentTime 
+      let nextTime
       //console.log($p.eq(2).offset())
       for(let i=0;i<$p.length;i++){
         if(i===$p.length-1){
-          //console.log($p[i])
+          console.log($p[i])
+          
         } else {
-          let currentTime = $p.eq(i).attr('data-time')
-          let nextTime = $p.eq(i + 1).attr('data-time')
-          if (currentTime < time && time < nextTime) {
+          currentTime = $p.eq(i).attr('data-time')
+          nextTime = $p.eq(i + 1).attr('data-time')
+          if (currentTime <= time && time < nextTime) {
 
             //console.log($p[i])
 
