@@ -1,5 +1,5 @@
-### 1.客户端预览链接：https://wangliuyong.github.io/music.com/src/index.html
-### 2.音乐播放器管理端使用说明
+### 1.客户端(移动端)预览链接：https://wangliuyong.github.io/music.com/src/index.html
+### 2.音乐播放器管理端（PC端）使用说明
 - 将所有文件克隆到本地
 - 进入文件所在文件夹内启动终端
 - 执行 `http-server -c-1` 开启本地模拟服务器
