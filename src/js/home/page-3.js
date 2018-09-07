@@ -2,7 +2,7 @@
   let view={
     el:'.tabs-content .page-3',
     template:`
-    <input type="tetx">
+    <h1 align="center" style="padding:20px;">搜索页面敬请期待</h1>
     `,
     render(){
       $(this.el).html(this.template)
