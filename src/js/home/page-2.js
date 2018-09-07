@@ -2,7 +2,7 @@
   let view={
     el:'.tabs-content .page-2',
     template:`
-    <p>这是page2</p>
+    <h1 align="center" style="padding:20px;">热歌榜敬请期待</h1>
     `,
     render(){
       $(this.el).html(this.template)
