@@ -7,8 +7,8 @@
         template:`
         <form action="#" class="songForm">
             <div class="row">编辑歌曲信息</div>
-            <div class="row"><label>歌名: <input name="song" type="text" value="_song_"></label></div>
-            <div class="row"><label>歌手: <input name="singer" type="text" value="_singer_"></label></div>
+            <div class="row"><label>歌名: <input required name="song" type="text" value="_song_"></label></div>
+            <div class="row"><label>歌手: <input required name="singer" type="text" value="_singer_"></label></div>
             <div class="row"><label>外链: <input name="url" type="text" value="_url_"></label></div>
             
             <div class="row"><label>封面: <input name="cover" type="text" value="_cover_"></label></div>
